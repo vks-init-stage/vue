@@ -4,20 +4,20 @@ postMerge :
       - pnpm install --shamefully-hoist=true 
               
   subModules:          #Not to be changed
-      - name: weex       #Can be changed
-        path : "./"
-        pattern: 
-          - "./test/weex/**/*[sS]pec.js"
+#       - name: weex       #Can be changed
+#         path : "./"
+#         pattern: 
+#           - "./test/weex/**/*[sS]pec.js"
         
-        framework : jasmine
+#         framework : jasmine
         
-#         preRun: 
-#           command:
-#               - npm run build:weex
-        postRun:
-            command:
-              - node --version
-        configFile : "./test/weex/jasmine.js"
+# #         preRun: 
+# #           command:
+# #               - npm run build:weex
+#         postRun:
+#             command:
+#               - node --version
+#         configFile : "./test/weex/jasmine.js"
         
       - name: ssr       
         path : "./"
