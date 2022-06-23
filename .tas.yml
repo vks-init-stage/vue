@@ -11,9 +11,9 @@ postMerge :
         
         framework : jasmine
         
-        preRun: 
-          command:
-              - npm run build:weex
+#         preRun: 
+#           command:
+#               - npm run build:weex
         postRun:
             command:
               - node --version
