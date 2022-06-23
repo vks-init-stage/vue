@@ -1,0 +1,79 @@
+postMerge :
+  preRun: 
+    command:
+      - npm i
+              
+  subModules:          #Not to be changed
+      - name: weex       #Can be changed
+        path : "./"
+        pattern: 
+          - "./test/weex/**/*[sS]pec.js"
+        
+        framework : jasmine
+        
+        preRun: 
+          command:
+              - npm run build:weex
+        postRun:
+            command:
+              - node --version
+        configFile : "./test/weex/jasmine.js"
+        
+      - name: ssr       
+        path : "./"
+        pattern: 
+          - "test/ssr/*.spec.js"
+        
+        framework : jasmine
+        
+        preRun: 
+          command:
+              - npm run build:ssr
+          
+        postRun:
+            command:
+              - node --version
+        configFile : "./test/ssr/jasmine.js"
+        
+preMerge : 
+  preRun: 
+    command:
+      - npm i
+
+  subModules:          #Not to be changed
+      - name: weex       #Can be changed
+        path : "./"
+        pattern: 
+          - "./test/weex/**/*[sS]pec.js"
+        
+        framework : jasmine
+        
+        preRun: 
+          command:
+              - npm run build:weex
+          
+        postRun:
+            command:
+              - node --version
+        configFile : "./test/weex/jasmine.js"
+        
+      - name: ssr       
+        path : "./"
+        pattern: 
+          - "test/ssr/*.spec.js"
+        
+        framework : jasmine
+        
+        preRun: 
+          command:
+              - npm run build:ssr
+          
+        postRun:
+            command:
+              - node --version
+        configFile : "./test/ssr/jasmine.js"
+        
+  
+parallelism: 2 # this will be depricated in future
+version : 2.0
+
