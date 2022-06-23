@@ -26,9 +26,9 @@ postMerge :
         
         framework : jasmine
         
-        preRun: 
-          command:
-              - npm run build:ssr
+#         preRun: 
+#           command:
+#               - npm run build:ssr
           
         postRun:
             command:
