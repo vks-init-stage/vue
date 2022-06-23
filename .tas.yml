@@ -1,7 +1,7 @@
 postMerge :
   preRun: 
     command:
-      - npm i
+      - pnpm install --shamefully-hoist=true 
               
   subModules:          #Not to be changed
       - name: weex       #Can be changed
@@ -38,7 +38,7 @@ postMerge :
 preMerge : 
   preRun: 
     command:
-      - npm i
+      - pnpm install --shamefully-hoist=true 
 
   subModules:          #Not to be changed
       - name: weex       #Can be changed
