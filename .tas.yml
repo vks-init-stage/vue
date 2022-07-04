@@ -2,6 +2,7 @@ postMerge :
   preRun: 
     command:
       - pnpm install --shamefully-hoist=true 
+      - pnpm install -w  --shamefully-hoist=true  jest
               
   subModules:          #Not to be changed
 
