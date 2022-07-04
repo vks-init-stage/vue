@@ -15,27 +15,27 @@ postMerge :
         framework : jest
         
       
-      - name: ssr       
-        path : "./"
-        pattern: 
-          - "packages/server-renderer/test/*.spec.ts"
+#       - name: ssr       
+#         path : "./"
+#         pattern: 
+#           - "packages/server-renderer/test/*.spec.ts"
         
-        framework : jest
+#         framework : jest
         
-        preRun:
-          command:
-              - npm run build -- runtime-cjs,server-renderer
+#         preRun:
+#           command:
+#               - npm run build -- runtime-cjs,server-renderer
       
-      - name: e2e       
-        path : "./"
-        pattern: 
-          - "test/e2e/*.spec.ts"
+#       - name: e2e       
+#         path : "./"
+#         pattern: 
+#           - "test/e2e/*.spec.ts"
         
-        framework : jest
+#         framework : jest
         
-        preRun:
-          command:
-              - npm run build -- full-prod,server-renderer-basic
+#         preRun:
+#           command:
+#               - npm run build -- full-prod,server-renderer-basic
   
         
 preMerge : 
