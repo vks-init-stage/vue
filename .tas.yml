@@ -4,36 +4,38 @@ postMerge :
       - pnpm install --shamefully-hoist=true 
               
   subModules:          #Not to be changed
-#       - name: weex       #Can be changed
-#         path : "./"
-#         pattern: 
-#           - "./test/weex/**/*[sS]pec.js"
+
         
-#         framework : jasmine
+      - name: unit       
+        path : "./"
+        pattern: 
+          - "test/unit/**/*.spec.ts"
         
-# #         preRun: 
-# #           command:
-# #               - npm run build:weex
-#         postRun:
-#             command:
-#               - node --version
-#         configFile : "./test/weex/jasmine.js"
+        framework : jest
         
+      
       - name: ssr       
         path : "./"
         pattern: 
-          - "test/ssr/*.spec.js"
+          - "packages/server-renderer/test/*.spec.ts"
         
-        framework : jasmine
+        framework : jest
         
-#         preRun: 
-#           command:
-#               - npm run build:ssr
-          
-        postRun:
-            command:
-              - node --version
-        configFile : "./test/ssr/jasmine.js"
+        preRun:
+          command:
+              - npm run build -- runtime-cjs,server-renderer
+      
+      - name: e2e       
+        path : "./"
+        pattern: 
+          - "test/e2e/*.spec.ts"
+        
+        framework : jest
+        
+        preRun:
+          command:
+              - npm run build -- full-prod,server-renderer-basic
+  
         
 preMerge : 
   preRun: 
